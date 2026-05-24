@@ -13,23 +13,36 @@ justify-content:center;
 align-items:center;
 min-height:100vh;
 text-align:center;
+padding:60px;
 ">
 
 <div>
 
-<h1>당신은 이미 상자를 열었다.</h1>
+<h1>당신은 상자를 열지 않았다.</h1>
 
-<p>그렇다면 어찌 고양이를 죽였는가?</p>
+<p>그렇다면, 그 안의 고양이는 어디에 있었는가?</p>
 
 <br>
 
-<button onclick="reset()">처음으로 돌아가기</button>
+<button onclick="reset()" style="
+padding:10px 20px;
+font-family:serif;
+cursor:pointer;
+background:black;
+color:red;
+border:1px solid red;
+">
+처음으로 돌아가기
+</button>
 
 </div>
 
 <script>
 function reset(){
-  localStorage.clear();
+  // ✔ 이 루트만 초기화 (안전)
+  localStorage.removeItem("route");
+
+  // ✔ 사이트 초기 상태로 복귀
   window.location.href = "index.html";
 }
 </script>
