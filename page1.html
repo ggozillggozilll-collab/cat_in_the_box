@@ -5,18 +5,14 @@
 </head>
 
 <body style="
-background:white;
-color:black;
+background:black;
+color:white;
 font-family:serif;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
 text-align:center;
 padding:60px;
 ">
 
-<div style="max-width:800px;">
+<div style="max-width:800px;margin:0 auto;">
 
 <p>
 처음의 기억은 까만 상자 속이었다, 눈을 떠 본 것이라곤 끝없는 어둠.<br>
@@ -39,21 +35,6 @@ padding:60px;
 </p>
 
 </div>
-
-<script>
-// 상태 기반 새로고침 진행 구조
-const stage = localStorage.getItem("stage");
-
-// 처음 진입이면 stage 설정
-if (!stage || stage === "page1") {
-  localStorage.setItem("stage", "missing");
-}
-
-// 새로고침/재접속 시 자동 이동
-if (stage === "missing") {
-  window.location.href = "missing.html";
-}
-</script>
 
 </body>
 </html>
