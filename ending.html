@@ -21,13 +21,25 @@ text-align:center;
 
 <br>
 
-<button onclick="reset()">처음으로 돌아가기</button>
+<button onclick="reset()" style="
+padding:10px 20px;
+font-family:serif;
+cursor:pointer;
+background:#fff;
+border:1px solid #000;
+">
+처음으로 돌아가기
+</button>
 
 </div>
 
 <script>
 function reset(){
-  localStorage.clear();
+  // 상태 초기화
+  localStorage.removeItem("stage");
+  localStorage.removeItem("route");
+
+  // index로 복귀
   window.location.href = "index.html";
 }
 </script>
