@@ -15,38 +15,22 @@ font-family:serif;
 text-align:center;
 ">
 
-<div style="max-width:600px;">
+<div>
 
 <h1>상자 속 고양이</h1>
 
 <p>
-상자 속의 고양이. 상자 속의 고양이가 죽었는지 살았는지 아는 방법은 상자를 여는 것 뿐이다.<br><br>
-
-그러나 상자를 열게 되면 고양이는 죽게 된다.<br>
-이것이 인간의 호기심을 이용하는 실험...
+상자 속의 고양이.<br>
+상자를 여는가?
 </p>
 
-<br><br>
+<br>
 
-<button onclick="openBox()" style="
-padding:10px 20px;
-background:green;
-color:white;
-border:none;
-cursor:pointer;
-margin:5px;
-">
+<button onclick="openBox()" style="padding:10px 20px;background:green;color:white;">
 상자를 연다
 </button>
 
-<button onclick="denyBox()" style="
-padding:10px 20px;
-background:red;
-color:white;
-border:none;
-cursor:pointer;
-margin:5px;
-">
+<button onclick="denyBox()" style="padding:10px 20px;background:red;color:white;">
 방치한다
 </button>
 
@@ -54,14 +38,23 @@ margin:5px;
 
 <script>
 function openBox() {
-  localStorage.setItem("box_opened", "true");
+  // open 루트 지정
+  localStorage.setItem("route", "open");
+
+  // 필요하면 진행 상태도 초기화
   localStorage.setItem("stage", "page1");
+
   window.location.href = "page1.html";
 }
 
 function denyBox() {
-  localStorage.setItem("box_opened", "false");
-  window.location.href = "ending.html";
+  // deny 루트 지정
+  localStorage.setItem("route", "deny");
+
+  // 모든 진행 차단
+  localStorage.setItem("stage", "deny");
+
+  window.location.href = "ending2.html";
 }
 </script>
 
