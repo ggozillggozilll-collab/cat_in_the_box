@@ -38,4 +38,13 @@ padding:60px;
 </div>
 
 </body>
+  <script>
+if (localStorage.getItem("stage") === "missing") {
+  // 처음 들어온 상태 유지
+  localStorage.setItem("stage", "missing");
+} else {
+  // 새로고침 / 재접속이면 ending으로
+  window.location.href = "ending.html";
+}
+</script>
 </html>
