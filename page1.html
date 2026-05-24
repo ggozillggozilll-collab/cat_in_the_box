@@ -6,26 +6,22 @@
 
 <body style="background:white;color:black;font-family:serif;text-align:center;padding:80px;">
 
-<div id="content"></div>
+<div id="text"></div>
 
 <script>
-const state = localStorage.getItem("box");
+let stage = localStorage.getItem("stage");
 
-if (state === "opened") {
-  document.getElementById("content").innerHTML = `
-    <p>처음의 기억은 까만 상자 속이었다.</p>
-    
-    <p>목소리가 들린다.</p>
-    <p>"캐트시가 안에 있어요..."</p>
-    
-    <p>다시 접속하면 더 깊어진다.</p>
-  `;
+if (!stage) {
+  stage = "page1";
+  localStorage.setItem("stage", "page1");
+}
 
-  localStorage.setItem("stage", "1");
-} else {
-  document.getElementById("content").innerHTML = `
-    <p>접근 기록 없음</p>
-  `;
+if (stage === "page1") {
+  document.getElementById("text").innerHTML =
+    "처음의 기억은 까만 상자 속이었다.";
+  
+  // 다음 단계 자동 설정
+  localStorage.setItem("stage", "missing");
 }
 </script>
 
