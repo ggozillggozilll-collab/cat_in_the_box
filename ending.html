@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body {
+  background:black;
+  color:red;
+  font-family:serif;
+  text-align:center;
+  padding:80px;
+}
+
+#cursor::after {
+  content:"|";
+  animation:blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="cursor"></h1>
+
+<script>
+const msg = " 당신은 이미 상자를 열었다.";
+let i = 0;
+
+function type() {
+  if (i < msg.length) {
+    document.getElementById("cursor").innerHTML += msg[i];
+    i++;
+    setTimeout(type, 80);
+  }
+}
+type();
+
+// 기억 기반 공포
+if (localStorage.getItem("box_opened") === "true") {
+  setTimeout(() => {
+    document.body.innerHTML = `
+      <h1 style="color:red;font-family:serif;">
+      당신은 이미 상자를 열었다
+      </h1>
+    `;
+  }, 2000);
+}
+</script>
+
+</body>
+</html>
