@@ -1,11 +1,33 @@
-<body style="background:#111;color:#eee;font-family:monospace;padding:50px;">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
 
-<p>처음의 기억은 까만 상자 속이었다.</p>
+<body style="background:white;color:black;font-family:serif;text-align:center;padding:80px;">
 
-<p>"어떡해요, 캐트시가 안에 있어요..."</p>
+<div id="content"></div>
 
-<p>보가트는 목소리를 낼 수 없다.</p>
+<script>
+const state = localStorage.getItem("box");
 
-<a href="missing.html">다음</a>
+if (state === "opened") {
+  document.getElementById("content").innerHTML = `
+    <p>처음의 기억은 까만 상자 속이었다.</p>
+    
+    <p>목소리가 들린다.</p>
+    <p>"캐트시가 안에 있어요..."</p>
+    
+    <p>다시 접속하면 더 깊어진다.</p>
+  `;
+
+  localStorage.setItem("stage", "1");
+} else {
+  document.getElementById("content").innerHTML = `
+    <p>접근 기록 없음</p>
+  `;
+}
+</script>
 
 </body>
+</html>
