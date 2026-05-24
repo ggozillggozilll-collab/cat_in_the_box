@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+
+<body style="
+background:black;
+color:red;
+font-family:serif;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+text-align:center;
+">
+
+<div>
+<h1 id="text1"></h1>
+<p id="text2"></p>
+</div>
+
+<script>
+const line1 = "당신은 이미 상자를 열었다.";
+const line2 = "그렇다면 어찌 고양이를 죽였는가?";
+
+let i = 0;
+let j = 0;
+
+// 1줄 타이핑
+function type1() {
+  if (i < line1.length) {
+    document.getElementById("text1").innerHTML += line1[i];
+    i++;
+    setTimeout(type1, 80);
+  } else {
+    setTimeout(type2, 500);
+  }
+}
+
+// 2줄 타이핑
+function type2() {
+  if (j < line2.length) {
+    document.getElementById("text2").innerHTML += line2[j];
+    j++;
+    setTimeout(type2, 80);
+  }
+}
+
+// 시작
+type1();
+
+// 상태 초기화 (엔딩 진입 순간 리셋)
+localStorage.clear();
+</script>
+
+</body>
+</html>
