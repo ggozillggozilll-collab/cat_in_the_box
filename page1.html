@@ -4,44 +4,27 @@
 <meta charset="UTF-8">
 </head>
 
-<body style="
-background:black;
-color:white;
-font-family:serif;
-text-align:center;
-padding:60px;
-">
-
-<div style="max-width:800px;margin:0 auto;">
+<body style="background:black;color:white;font-family:serif;text-align:center;padding:60px;">
 
 <p>
 처음의 기억은 까만 상자 속이었다, 눈을 떠 본 것이라곤 끝없는 어둠.<br>
 지쳐 잠에 들면 벽 너머로부터 말소리가 들렸다.
 </p>
 
-<br>
-
 <p>
 "어떡해요, 캐트시가 안에 있어요... 우리 아들이 안에 있어요."<br>
-처참하게 무너진 어른들의 목소리<br>
-목소리?
+처참하게 무너진 어른들의 목소리
 </p>
-
-<br>
 
 <p>
-보가트는 목소리를 낼 수 없다, 그런 것 까지 따라하지 못한다.<br>
-그럼 이건. 내 꿈인가. 꿈을 꾸는 기분이 들기도 한다.
+보가트는 목소리를 낼 수 없다.
 </p>
 
-</div>
-
 <script>
-/* ✔ page1 새로고침 감지 → missing 이동 */
-if (sessionStorage.getItem("page1_entered")) {
+if (sessionStorage.getItem("p1")) {
   window.location.href = "missing.html";
 } else {
-  sessionStorage.setItem("page1_entered", "true");
+  sessionStorage.setItem("p1","1");
 }
 </script>
 
