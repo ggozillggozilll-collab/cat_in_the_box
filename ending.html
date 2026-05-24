@@ -19,18 +19,16 @@ text-align:center;
 
 <h1>내가 처음 맞이한 세상은...</h1>
 
-<p>여기까지 도달했다.</p>
+<p>이 문장은 끝까지 읽히지 않는다.</p>
 
 <br>
 
-<button onclick="reset()" style="padding:10px 20px;">
-처음으로 돌아가기
-</button>
+<button onclick="reset()">처음으로 돌아가기</button>
 
 </div>
 
 <script>
-function reset() {
+function reset(){
   localStorage.clear();
   window.location.href = "index.html";
 }
