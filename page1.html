@@ -4,7 +4,13 @@
 <meta charset="UTF-8">
 </head>
 
-<body style="background:black;color:white;font-family:serif;text-align:center;padding:60px;">
+<body style="
+background:black;
+color:white;
+font-family:serif;
+text-align:center;
+padding:60px;
+">
 
 <div style="max-width:800px;margin:0 auto;">
 
@@ -28,11 +34,16 @@
 그럼 이건. 내 꿈인가. 꿈을 꾸는 기분이 들기도 한다.
 </p>
 
-<br>
-
-<a href="missing.html" style="color:white;">다음</a>
-
 </div>
+
+<script>
+/* ✔ page1 새로고침 감지 → missing 이동 */
+if (sessionStorage.getItem("page1_entered")) {
+  window.location.href = "missing.html";
+} else {
+  sessionStorage.setItem("page1_entered", "true");
+}
+</script>
 
 </body>
 </html>
