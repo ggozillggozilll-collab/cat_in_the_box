@@ -1,29 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-</head>
-
-<body style="background:white;color:black;font-family:serif;text-align:center;padding:80px;">
-
-<div id="text"></div>
-
 <script>
-let stage = localStorage.getItem("stage");
+const stage = localStorage.getItem("stage");
 
-if (!stage) {
-  stage = "page1";
-  localStorage.setItem("stage", "page1");
-}
+// 1. 현재 상태 확인
+if (!stage || stage === "page1") {
 
-if (stage === "page1") {
-  document.getElementById("text").innerHTML =
-    "처음의 기억은 까만 상자 속이었다.";
-  
-  // 다음 단계 자동 설정
+  document.body.innerHTML = `
+    <p>처음의 기억은 까만 상자 속이었다.</p>
+  `;
+
+  // 2. 다음 단계로 이동 준비
   localStorage.setItem("stage", "missing");
 }
-</script>
 
-</body>
-</html>
+// 3. 새로고침하면 자동으로 missing으로 감
+if (stage === "missing") {
+  window.location.href = "missing.html";
+}
+</script>
