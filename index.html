@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+<meta charset="UTF-8">
+<title>상자 속 고양이</title>
+</head>
+
 <body style="
 background:black;
 color:white;
@@ -9,17 +14,62 @@ justify-content:center;
 align-items:center;
 min-height:100vh;
 font-family:sans-serif;
+text-align:center;
 ">
 
 <div>
 
 <h1>상자 속 고양이.</h1>
 
-<button onclick="location.href='page1.html'">
+<p style="opacity:0.7; max-width:400px;">
+상자 속의 고양이가 죽었는지 살았는지 아는 방법은 상자를 여는 것 뿐이다.<br><br>
+그러나 상자를 열게 되면 고양이는 죽게 된다.
+</p>
+
+<br>
+
+<button style="
+padding:10px 20px;
+background:green;
+border:none;
+color:white;
+cursor:pointer;
+"
+onclick="openBox()">
 상자를 연다
 </button>
 
+<br><br>
+
+<button style="
+padding:10px 20px;
+background:red;
+border:none;
+color:white;
+cursor:pointer;
+"
+onclick="leaveBox()">
+방치한다
+</button>
+
 </div>
+
+<script>
+function openBox() {
+  localStorage.setItem("box_opened", "true");
+  window.location.href = "page1.html";
+}
+
+function leaveBox() {
+  document.body.innerHTML = `
+    <div style="text-align:center;">
+      <h1 style="color:red;">사이트 종료</h1>
+      <p>당신은 상자를 열지 않았다.</p>
+      <p style="opacity:0.5;">기록이 남지 않는다.</p>
+    </div>
+  `;
+}
+</script>
 
 </body>
 
