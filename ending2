@@ -18,18 +18,17 @@ text-align:center;
 <div>
 
 <h1>당신은 이미 상자를 열었다.</h1>
+
 <p>그렇다면 어찌 고양이를 죽였는가?</p>
 
 <br>
 
-<button onclick="reset()" style="padding:10px 20px;">
-처음으로 돌아가기
-</button>
+<button onclick="reset()">처음으로 돌아가기</button>
 
 </div>
 
 <script>
-function reset() {
+function reset(){
   localStorage.clear();
   window.location.href = "index.html";
 }
