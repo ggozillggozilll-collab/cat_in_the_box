@@ -37,20 +37,5 @@ padding:60px;
 
 </div>
 
-<script>
-// ✔ 핵심 로직
-if (localStorage.getItem("entered_missing") === "true") {
-
-  // 정상 진입 → 1회 사용 처리
-  localStorage.setItem("entered_missing", "used");
-
-} else {
-
-  // 새로고침 / 직접접근 → ending
-  window.location.href = "ending.html";
-
-}
-</script>
-
 </body>
 </html>
