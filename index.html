@@ -4,50 +4,26 @@
 <meta charset="UTF-8">
 </head>
 
-<body style="
-background:black;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-font-family:serif;
-text-align:center;
-">
-
-<div>
-
-<h1>상자 속 고양이</h1>
+<body style="background:black;color:white;font-family:serif;text-align:center;padding:60px;">
 
 <p>
-상자를 여는가?
+상자 속 고양이.<br>
+상자를 열면 고양이는 죽는다.
 </p>
 
 <br>
 
-<button onclick="openBox()" style="padding:10px 20px;background:green;color:white;">
-상자를 연다
-</button>
-
-<button onclick="denyBox()" style="padding:10px 20px;background:red;color:white;">
-방치한다
-</button>
-
-</div>
+<button onclick="openBox()">상자를 연다</button>
+<button onclick="leaveBox()">방치한다</button>
 
 <script>
-function openBox() {
-  localStorage.setItem("route", "open");
-  localStorage.setItem("stage", "page1");
-
-  // ⭐ 이게 없으면 절대 안 넘어감
+function openBox(){
+  localStorage.setItem("route","open");
   window.location.href = "page1.html";
 }
 
-function denyBox() {
-  localStorage.setItem("route", "deny");
-  localStorage.setItem("stage", "ending2");
-
+function leaveBox(){
+  localStorage.setItem("route","ignore");
   window.location.href = "ending2.html";
 }
 </script>
