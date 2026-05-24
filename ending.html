@@ -2,79 +2,39 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
-<style>
-body {
-  background: white;
-  color: black;
-  font-family: serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  text-align: center;
-  margin: 0;
-}
-
-#text {
-  font-size: 24px;
-}
-
-/* 커서 깜빡임 */
-#cursor::after {
-  content: "|";
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
-/* 살짝 불안정한 느낌 (선택적) */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-body {
-  animation: fadeIn 2s ease-in;
-}
-</style>
-
 </head>
 
-<body>
+<body style="
+background:white;
+color:black;
+font-family:serif;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+text-align:center;
+">
 
-<div id="text"></div>
+<div>
+
+<h1>내가 처음 맞이한 세상은...</h1>
+
+<p>여기까지 도달했다.</p>
+
+<br>
+
+<button onclick="reset()" style="padding:10px 20px;">
+처음으로 돌아가기
+</button>
+
+</div>
 
 <script>
-const msg = "내가 처음 맞이한 세상은...";
-let i = 0;
-
-function typeWriter() {
-  if (i < msg.length) {
-    document.getElementById("text").innerHTML += msg[i];
-    i++;
-    setTimeout(typeWriter, 120);
-  } else {
-    document.getElementById("text").id = "cursor";
-  }
-}
-
-typeWriter();
-
-/* reset 기능 */
-localStorage.setItem("stage", "ending");
-
 function reset() {
   localStorage.clear();
   window.location.href = "index.html";
 }
 </script>
-
-<br><br>
-
-<button onclick="reset()">처음으로 돌아가기</button>
 
 </body>
 </html>
